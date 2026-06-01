@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+
+public class Fila<T> {
+
+    private ArrayList<T> itens = new ArrayList<>();
+
+    public void adicionar(T objeto) {
+        itens.add(objeto);
+    }
+
+    public T proximo() {
+        if (itens.isEmpty()) {
+            return null;
+        }
+
+        return itens.remove(0);
+    }
+
+    public T primeiro() {
+        if (itens.isEmpty()) {
+            return null;
+        }
+
+        return itens.get(0);
+    }
+
+    public boolean vazia() {
+        return itens.isEmpty();
+    }
+
+    public int quantidade() {
+        return itens.size();
+    }
+
+    public void listar() {
+        for (T item : itens) {
+            IO.println(item);
+        }
+    }
+}
